@@ -1,4 +1,6 @@
 
+![Cover artwork](https://github.com/mark-nicepants/variables2json-docs/blob/main/artwork/cover%20art.png?raw=true)
+
 # Figma plugin: variables2json
 `variables2json` is a plugin for Figma that simplifies the process of exporting publishable variables and saving them in a JSON file. 
 
