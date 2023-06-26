@@ -31,6 +31,272 @@ The `variables2json` plugin is continuously being improved, and the following fe
 - 🚧 <b>Composites</b>: Assign metadata to Frames and group variables and styles together for powerful organization and management.
 - 🚧 <b>Git Sync</b>: Synchronize variables with a Git repository for version control and collaborative workflows.
 
+## Explantion of the JSON file
+
+<details>
+  <summary>Example JSON output</summary>
+```json
+{
+  "version": "1.0.0",
+  "metadata": {},
+  "collections": [
+    {
+      "name": "Theme",
+      "modes": [
+        {
+          "name": "Light",
+          "variables": [
+            {
+              "name": "insult",
+              "type": "string",
+              "value": "Yo"
+            },
+            {
+              "name": "bigGap",
+              "type": "number",
+              "value": 54
+            },
+            {
+              "name": "Colors/panelBg",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/divider",
+              "type": "color",
+              "value": {
+                "r": 229,
+                "g": 229,
+                "b": 229,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/selected",
+              "type": "color",
+              "value": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.10
+              }
+            },
+            {
+              "name": "Colors/icon",
+              "type": "color",
+              "value": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 1
+              }
+            },
+            {
+              "name": "Mr Boolean",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "buttonPrimary",
+              "type": "color",
+              "value": {
+                "r": 0,
+                "g": 255,
+                "b": 25,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/windowBackground",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/panelFg",
+              "type": "color",
+              "value": {
+                "r": 44,
+                "g": 44,
+                "b": 44,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/mutedText",
+              "type": "color",
+              "value": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.30
+              }
+            },
+            {
+              "name": "smallGap",
+              "type": "number",
+              "value": 4
+            },
+            {
+              "name": "Colors/primaryText",
+              "type": "color",
+              "value": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dark",
+          "variables": [
+            {
+              "name": "insult",
+              "type": "string",
+              "value": "mama"
+            },
+            {
+              "name": "bigGap",
+              "type": "number",
+              "value": 108
+            },
+            {
+              "name": "Colors/panelBg",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 0.10
+              }
+            },
+            {
+              "name": "Colors/divider",
+              "type": "color",
+              "value": {
+                "r": 68,
+                "g": 68,
+                "b": 68,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/selected",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 0.10
+              }
+            },
+            {
+              "name": "Colors/icon",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            },
+            {
+              "name": "Mr Boolean",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "name": "buttonPrimary",
+              "type": "color",
+              "value": {
+                "r": 45,
+                "g": 4,
+                "b": 4,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/windowBackground",
+              "type": "color",
+              "value": {
+                "r": 44,
+                "g": 44,
+                "b": 44,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/panelFg",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            },
+            {
+              "name": "Colors/mutedText",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 0.30
+              }
+            },
+            {
+              "name": "smallGap",
+              "type": "number",
+              "value": 8
+            },
+            {
+              "name": "Colors/primaryText",
+              "type": "color",
+              "value": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+</details>
+
+The provided JSON structure represents a configuration file that stores variables for different modes (in this case, "Light" and "Dark") within a collection named "Theme." Here's an explanation of the different components and their meanings:
+
+- <b>version</b>: Specifies the version number of the JSON structure or file format.
+- <b>metadata</b>: An empty object that can be used to store additional information about the JSON file.
+- <b>collections</b>: An array containing collections of variables.
+    - <b>name</b>: The name of the collection ("Theme" in this case).
+    - <b>modes</b>: An array of modes within the collection.
+    - <b>name</b>: The name of the mode ("Light" or "Dark" in this case).
+    - <b>variables</b>: An array of variables within the mode.
+        - <b>name</b>: The name of the variable.
+        - <b>type</b>: The type of the variable (string, number, color, or boolean).
+        - <b>value</b>: The value of the variable, which can be a string, number, color object, or boolean.
+
+In the provided example, there are two modes, "Light" and "Dark," each containing several variables of different types (string, number, color, and boolean). The color values are represented using an object with "r," "g," "b," and "a" properties, representing the red, green, blue, and alpha channels, respectively.
+
+The JSON structure allows you to define and store variables in a structured format, making it easier to manage and utilize them in your application or project.
+
 ## Tips for Users
 Here are some tips to enhance your experience with the variables2json plugin:
 
