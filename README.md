@@ -24,10 +24,15 @@ To install the variables2json plugin, follow these steps:
 - ✅ Boolean
 - ✅ Alias
 
+## Local styles
+`variables2json` supports local styles for typography, effects and grids.
+- ✅ Textstyles
+- ✅ Effects
+- ✅ Grids
+  
 ## Features in Development
 The `variables2json` plugin is continuously being improved, and the following features are currently under development:
 
-- 🚧 <b>Export Styles</b>: Along with variables, export styles such as typography and effects for comprehensive integration.
 - 🚧 <b>Composites</b>: Assign metadata to Frames and group variables and styles together for powerful organization and management.
 - 🚧 <b>Git Sync</b>: Synchronize variables with a Git repository for version control and collaborative workflows.
 
@@ -38,7 +43,7 @@ The `variables2json` plugin is continuously being improved, and the following fe
   
 ```json
 {
-  "version": "1.0.0",
+  "version": "1.0.2",
   "metadata": {},
   "collections": [
     {
@@ -84,7 +89,7 @@ The `variables2json` plugin is continuously being improved, and the following fe
                 "r": 0,
                 "g": 0,
                 "b": 0,
-                "a": 0.10
+                "a": 0.1
               }
             },
             {
@@ -139,7 +144,7 @@ The `variables2json` plugin is continuously being improved, and the following fe
                 "r": 0,
                 "g": 0,
                 "b": 0,
-                "a": 0.30
+                "a": 0.3
               }
             },
             {
@@ -179,7 +184,7 @@ The `variables2json` plugin is continuously being improved, and the following fe
                 "r": 255,
                 "g": 255,
                 "b": 255,
-                "a": 0.10
+                "a": 0.1
               }
             },
             {
@@ -199,7 +204,7 @@ The `variables2json` plugin is continuously being improved, and the following fe
                 "r": 255,
                 "g": 255,
                 "b": 255,
-                "a": 0.10
+                "a": 0.1
               }
             },
             {
@@ -254,7 +259,7 @@ The `variables2json` plugin is continuously being improved, and the following fe
                 "r": 255,
                 "g": 255,
                 "b": 255,
-                "a": 0.30
+                "a": 0.3
               }
             },
             {
@@ -270,6 +275,125 @@ The `variables2json` plugin is continuously being improved, and the following fe
                 "g": 255,
                 "b": 255,
                 "a": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Typography",
+      "modes": [
+        {
+          "name": "Style",
+          "variables": [
+            {
+              "name": "DefaultText",
+              "type": "typography",
+              "value": {
+                "fontSize": 11,
+                "fontFamily": "Inter",
+                "fontWeight": "Semi Bold",
+                "lineHeight": 16,
+                "lineHeightUnit": "PIXELS",
+                "letterSpacing": -1,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "SmallText",
+              "type": "typography",
+              "value": {
+                "fontSize": 9,
+                "fontFamily": "Inter",
+                "fontWeight": "Regular",
+                "lineHeight": 11,
+                "lineHeightUnit": "PIXELS",
+                "letterSpacing": -1,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "RegularText",
+              "type": "typography",
+              "value": {
+                "fontSize": 11,
+                "fontFamily": "Inter",
+                "fontWeight": "Regular",
+                "lineHeight": 16,
+                "lineHeightUnit": "PIXELS",
+                "letterSpacing": -1,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Effects",
+      "modes": [
+        {
+          "name": "Style",
+          "variables": [
+            {
+              "name": "cardDropShadow",
+              "type": "effect",
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 84,
+                      "g": 255,
+                      "b": 0,
+                      "a": 0.25
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "radius": 4,
+                    "spread": 0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grids",
+      "modes": [
+        {
+          "name": "Style",
+          "variables": [
+            {
+              "name": "desktop",
+              "type": "grid",
+              "value": {
+                "layoutGrids": [
+                  {
+                    "pattern": "COLUMNS",
+                    "color": {
+                      "r": 233,
+                      "g": 27,
+                      "b": 200,
+                      "a": 0.1
+                    },
+                    "alignment": "STRETCH",
+                    "gutterSize": 5,
+                    "offset": 10,
+                    "count": 5
+                  }
+                ]
               }
             }
           ]
@@ -292,9 +416,13 @@ The provided JSON structure represents a configuration file that stores variable
     - <b>variables</b>: An array of variables within the mode.
         - <b>name</b>: The name of the variable.
         - <b>type</b>: The type of the variable (string, number, color, or boolean).
-        - <b>value</b>: The value of the variable, which can be a string, number, color object, or boolean.
+        - <b>value</b>: The value of the variable, which can be a string, number, color object, text object, effect object or boolean.
 
 In the provided example, there are two modes, "Light" and "Dark," each containing several variables of different types (string, number, color, and boolean). The color values are represented using an object with "r," "g," "b," and "a" properties, representing the red, green, blue, and alpha channels, respectively.
+
+- The "Typography" collection has variables representing typography-related properties, such as font size, font family, etc. 
+- The "Effects" collection has variables representing different visual effects, like drop shadow. 
+- The "Grids" collection has variables representing different grid layouts.
 
 The JSON structure allows you to define and store variables in a structured format, making it easier to manage and utilize them in your application or project.
 
