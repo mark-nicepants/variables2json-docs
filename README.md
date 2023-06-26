@@ -35,6 +35,7 @@ The `variables2json` plugin is continuously being improved, and the following fe
 
 <details>
   <summary>Example JSON output</summary>
+  
 ```json
 {
   "version": "1.0.0",
