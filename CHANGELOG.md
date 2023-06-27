@@ -1,3 +1,7 @@
+# v1.0.3 - 27 jun 2023
+
+- Fixed a bug when loading a alias from a different Collection
+- Added support for resizing the plugin window
 
 # v1.0.2 - 26 jun 2023
 
