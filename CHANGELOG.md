@@ -1,3 +1,11 @@
+# v1.0.4 - 8 jul 2023 (version 6)
+
+- Added settings tab
+- Add setting to switch color format in json output to HEX
+  - When opacity is 100% the hex color will just be #000000
+  - When opacity is < 100% the hex color will contain 2 extra values for the a channel (0-255) e.g 30% black = #0000004D
+- Add settings to exclude collections and variables that start with an underscore
+
 # v1.0.3 - 27 jun 2023 (version 5)
 
 - Fixed a bug when loading a alias from a different Collection
